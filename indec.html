@@ -1,39 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACS schedule</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap" rel="stylesheet">
-</head>
-<body>
-   <div class="main">
-    <nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript practice</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
         <div class="logo-area">
-            <img src="logo.png" alt="" class="logo"/>
-            <h2>ACS schedule</h2>
+          <img src="images/logo.png" class="logo" />
+          <h2>ACS schedule</h2>
         </div>
 
         <div class="nav-links">
-            <ul>
-            <a href=""><li>Classes</li></a>
-            <a href=""><li>rotate</li></a>
-            <a href=""><li>AP program</li></a>
-            <a href=""><li>year schedule</li></a>
-            </ul>
+          <ul>
+            <a href="classes.html"><li>classes</li></a>
+            <a href="AP.html"><li>AP</li></a>
+            <a href="rotate.html"><li>rotate</li></a>
+            <a href="schedule.html"><li>year schedule</li></a>
+          </ul>
         </div>
-    </nav>
+      </nav>
 
-    <!-- information section -->
-    <div class="information">
+      <div class="infomation">
+        <div class="overlay"></div>
+        <img src="./images/pc.png" class="mobile" />
         <div id="circle">
-            <div class="feature">
-                <img src="./images/" alt="">
+          <div class="feature one">
+            <img src="./images/camera.png" alt="" />
+            <div>
+              <h1>Self-motivated learners</h1>
             </div>
-        </div> 
+          </div>
+          <div class="feature two">
+            <img src="./images/processor.png" alt="" />
+            <div>
+              <h1>demonstrate respect</h1>
+            </div>
+          </div>
+          <div class="feature three">
+            <img src="./images/display.png" alt="" />
+            <div>
+              <h1>act with integrity</h1>
+            </div>
+          </div>
+          <div class="feature four">
+            <img src="./images/battery.png" alt="" />
+            <div>
+              <h1>seek intellectual growth</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <img src="./images/arrow.png" id="upBtn" />
+        <h3>Feature</h3>
+        <img src="./images/arrow.png" id="downBtn" />
+      </div>
     </div>
-   </div>
-</body>
+
+    <script>
+      var circle = document.getElementById("circle");
+      var upBtn = document.getElementById("upBtn");
+      var downBtn = document.getElementById("downBtn");
+
+      var rotateValue = circle.style.transform;
+      var rotateSum;
+
+      upBtn.onclick = function () {
+        /* 時計回りに90°回転させる */
+        rotateSum = rotateValue + "rotate(-90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+      };
+      downBtn.onclick = function () {
+        /* 時計回りに90°回転させる */
+        rotateSum = rotateValue + "rotate(90deg)";
+        circle.style.transform = rotateSum;
+        rotateValue = rotateSum;
+      };
+    </script>
+  </body>
 </html>
